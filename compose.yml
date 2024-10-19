@@ -14,9 +14,9 @@ services:
     ports: "3000:3000"
 
   db:
-    image: mariadb:latest
+    image: postgres:latest
     environment:
-      MARIADB_ROOT_PASSWORD: password
+      POSTGRES_PASSWORD: password
     volumes:
       - db-data:/ver/lib/mysql
 volumes:
