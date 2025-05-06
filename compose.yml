@@ -10,14 +10,17 @@ services:
     depends_on:
       - db
     environment:
-      DATABASE_PASSWORD: password
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
     ports: "3000:3000"
 
   db:
     image: postgres:latest
     environment:
+      POSTGRES_USER: postgres
       POSTGRES_PASSWORD: password
     volumes:
-      - db-data:/ver/lib/mysql
+      - db-data:/ver/lib/postgres/data
+  
 volumes:
   db-data:
